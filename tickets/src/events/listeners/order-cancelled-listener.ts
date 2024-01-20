@@ -3,11 +3,12 @@ import { OrderCancelledEvent } from '@scticketscommon/common';
 import { Message } from 'node-nats-streaming';
 import { Ticket } from '../../models/ticket';
 import { TicketUpdatedPublisher } from '../publishers/ticket-updated-publisher';
+import { queueGroupName } from './queue-group-name';
 
 export class OrderCancelledListener extends Listener<OrderCancelledEvent> {
     subject: Subjects.OrderCancelled = Subjects.OrderCancelled;
 
-    queueGroupName: string = this.queueGroupName;
+    queueGroupName: string = queueGroupName;
 
     async onMessage(data: OrderCancelledEvent['data'], msg: Message) {
         const ticket = await Ticket.findById(data.ticket.id);
