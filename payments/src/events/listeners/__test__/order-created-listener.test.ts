@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
+import { Message } from 'node-nats-streaming';
 import { OrderCreatedEvent, OrderStatus } from '@scticketscommon/common';
 import { natsWrapper } from '../../../nats-wrapper';
 import { OrderCreatedListener } from '../order-created-listener';
-import { Message } from 'node-nats-streaming';
 import { Order } from '../../../models/order';
 
 const setup = async () => {
@@ -11,11 +11,11 @@ const setup = async () => {
     const data: OrderCreatedEvent['data'] = {
         id: new mongoose.Types.ObjectId().toHexString(),
         version: 0,
-        expiresAt: 'dat',
-        userId: new mongoose.Types.ObjectId().toHexString(),
+        expiresAt: 'alskdjf',
+        userId: 'alskdjf',
         status: OrderStatus.Created,
         ticket: {
-            id: new mongoose.Types.ObjectId().toHexString(),
+            id: 'alskdfj',
             price: 10,
         },
     };

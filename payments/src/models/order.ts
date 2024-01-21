@@ -1,6 +1,6 @@
-import { OrderStatus } from '@scticketscommon/common';
-import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 import mongoose from 'mongoose';
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
+import { OrderStatus } from '@scticketscommon/common';
 
 interface OrderAttrs {
     id: string;
