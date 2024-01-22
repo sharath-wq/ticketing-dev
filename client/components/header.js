@@ -2,9 +2,11 @@ import Link from 'next/link';
 
 export default ({ currentUser }) => {
     const links = [
-        !currentUser && { label: 'Sing Up', href: '/auth/signup' },
-        !currentUser && { label: 'Sing In', href: '/auth/signin' },
-        currentUser && { label: 'Sing Out', href: '/auth/signout' },
+        !currentUser && { label: 'Sign Up', href: '/auth/signup' },
+        !currentUser && { label: 'Sign In', href: '/auth/signin' },
+        currentUser && { label: 'Sell Tickets', href: '/tickets/new' },
+        currentUser && { label: 'My orders', href: '/orders' },
+        currentUser && { label: 'Sign Out', href: '/auth/signout' },
     ]
         .filter((linkConfig) => linkConfig)
         .map(({ label, href }) => {
