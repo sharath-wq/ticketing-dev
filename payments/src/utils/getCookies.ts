@@ -3,10 +3,10 @@ import { app } from '../app';
 import jwt from 'jsonwebtoken';
 import mongoose from 'mongoose';
 
-const getCookies = () => {
+const getCookies = (id?: string) => {
     // Build a JWT payload. {id, email}
     const payload = {
-        id: new mongoose.Types.ObjectId().toHexString(),
+        id: id || new mongoose.Types.ObjectId().toHexString(),
         email: 'test@test.com',
     };
     // Create the JWT!
