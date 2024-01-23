@@ -1,4 +1,5 @@
 import useRequest from '@/hooks/use-request';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const TicketShow = ({ ticket }) => {
@@ -17,16 +18,19 @@ const TicketShow = ({ ticket }) => {
     });
 
     return (
-        <div className='max-w-md mx-auto p-6 bg-white rounded-md shadow-lg'>
-            <h1 className='text-3xl font-bold mb-4'>{ticket.title}</h1>
-            <p className='text-gray-600 mb-4'>Price: ${ticket.price.toFixed(2)}</p>
-            {errors && <div className='text-red-500 mb-4'>{errors}</div>}
-            <button
-                onClick={() => doRequest()}
-                className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none'
-            >
-                Buy Now
-            </button>
+        <div class='w-full max-w-sm mx-auto mt-16 rounded-lg border border-gray-200 bg-white shadow p-4'>
+            <div class='px-5 pb-5'>
+                <h5 class='text-xl font-semibold tracking-tight text-gray-900'>{ticket.title}</h5>
+                <div class='flex items-center justify-between'>
+                    <span class='text-3xl font-bold text-gray-900'>${ticket.price}</span>
+                    <button
+                        onClick={() => doRequest()}
+                        class='rounded-lg bg-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300'
+                    >
+                        Buy Now
+                    </button>
+                </div>
+            </div>
         </div>
     );
 };

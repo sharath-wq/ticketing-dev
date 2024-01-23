@@ -4,7 +4,7 @@ import Header from '@/components/header';
 
 const AppComponent = ({ Component, pageProps, currentUser }) => {
     return (
-        <div>
+        <div className='px-24'>
             <Header currentUser={currentUser} />
             <Component {...pageProps} currentUser={currentUser} />
         </div>
